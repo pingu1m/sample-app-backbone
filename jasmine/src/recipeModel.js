@@ -14,6 +14,26 @@ app.Models.Recipe = Backbone.Model.extend({
             ingredients: [],
             instructions: []
         };
+    },
+    checkForIngredientType: function(propertyName) {
+        var ingredients = this.get('ingredients');
+        for(var i= 0, l= ingredients.length; i < l; i++) {
+            var ingredient = ingredients[i];
+            if(ingredient[propertyName]) {
+                return true;
+            }
+        }
+        return false;
+    },
+    containsNuts: function() {
+        return this.checkForIngredientType('isNut');
+    },
+    containsEggs: function() {
+        return this.checkForIngredientType('isEggs');
+    },
+    isVegetarian: function() {
+        return this.checkForIngredientType('isVegetarian');
     }
+
 });
 
