@@ -4,6 +4,18 @@
  */
 
 describe('A recipe collection', function() {
+    var fakeServer;
+
+    beforeEach(function() {
+        fakeServer = sinon.fakeServer.create();
+        fakeServer.respondImmediately = true;
+    });
+
+    afterEach(function () {
+        fakeServer.restore();
+    });
+
+
     it('should exist', function() {
         expect(app.Collections.Recipes).toBeDefined();
     });
@@ -41,17 +53,10 @@ describe('A recipe collection', function() {
     it('should populate data from the back end', function() {
         var recipes = new app.Collections.Recipes();
 
-        var fakeServer = sinon.fakeServer.create();
-        fakeServer.respondWith('/recipes', [
-            '200',
-            {'Content-type': 'application/json'},
-            JSON.stringify([FIXTURES.recipes.noRestricions])
-        ]);
+        fakeServer.respondWith('/recipes', FIXTURES.server.recipes.ok);
 
         recipes.fetch();
-        fakeServer.respond();
 
-        expect(recipes.lenght).toBeGreaterThan(0);
-        fakeServer.restore();
-    })
+        expect(recipes.length).toBeGreaterThan(0);
+    });
 });
