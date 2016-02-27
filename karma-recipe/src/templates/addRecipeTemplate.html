@@ -1,0 +1,27 @@
+<script type="x-handlebars" id="add-recipe-tmpl">
+    <label> Recipe Name: <input type="text" class="recipe-name"/></label>
+    <h4> Ingredients <button class="add-ingredient">Add an ingredient</button></h4>
+    <div class="ingredient-list"></div>
+    <h4>Instructions <button class="add-instruction-step">Add a step</button></h4>
+    <div class="instruction-steps"> </div>
+    <button class="save-recipe"> Save Recipe</button>
+
+</script>
+
+<script type="x-handlebars" id="add-ingredient-tmpl">
+    <div class="ingredient">
+        <label>Quantity: <input type="text" class="quantity"/> </label>
+        <label>Base ingredient: <input type="text" class="base-ingredient"/> </label>
+        <label>Modifier: <input type="text" class="modifier"/> </label>
+         <button class="remove-ingredient"> Remove Ingredient</button>
+    </div>
+
+</script>
+
+<script type="x-handlebars" id="add-instruction-step-tmpl">
+    <div class="instruction-step">
+        <input type="text" class="instruction-line"/>
+        <button class="remove-instruction-step">Remove Step</button>
+    </div>
+
+</script>

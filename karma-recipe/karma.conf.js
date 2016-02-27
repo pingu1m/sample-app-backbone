@@ -25,6 +25,7 @@ module.exports = function(config) {
       'src/recipeModel.js',
       'src/recipeCollection.js',
       'src/recipeView.js',
+      'src/addRecipeView.js',
       'spec/**/*.js'
     ],
 

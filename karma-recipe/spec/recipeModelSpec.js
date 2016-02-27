@@ -38,6 +38,9 @@ describe('A recipe', function () {
         expect(meatRecipe.isVegetarian()).toBeFalsy();
         expect(vegetarianRecipe.isVegetarian()).toBeTruthy();
 
+    });
+    it('should delegate to checkForIngredients', function() {
+        var withEggsRecipe = new app.Models.Recipe(FIXTURES.recipes.withEggs);
     })
 });
 
