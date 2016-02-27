@@ -5,7 +5,13 @@
 
 describe('A page with backbone', function() {
   it('should have access to Underscore', function() {
-    expected(window._).toBeDefined();
-    expected(window._.VERSION).toBeDefined();
-  })
+    expect(window._).toBeDefined();
+    expect(window._.VERSION).toBeDefined();
+  });
+  it('should have access to Backbone', function() {
+    expect(window.Backbone).toBeDefined();
+    expect(window.Backbone.Model).toBeDefined();
+    expect(window.Backbone.Collection).toBeDefined();
+    expect(window.Backbone.View).toBeDefined();
+  });
 });
