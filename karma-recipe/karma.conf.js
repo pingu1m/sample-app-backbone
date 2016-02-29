@@ -22,6 +22,7 @@ module.exports = function(config) {
       'lib/handlebars.min.js',
       'src/templates/**/*.html',
       'spec/helpers/addTemplates.js',
+      'src/recipeRouter.js',
       'src/recipeModel.js',
       'src/recipeCollection.js',
       'src/recipeView.js',

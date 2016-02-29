@@ -36,7 +36,7 @@ app.Views.AddRecipe = Backbone.View.extend({
         this.$('.instruction-steps').append(this.instructionStepTemplate());
     },
     removeInstructionStep: function () {
-        $(evt.target).closes('.instruction-step').remove();
+        $(evt.target).closest('.instruction-step').remove();
     },
     saveRecipe: function () {
         this.model.set('name', this.$('.recipe-name').val());
